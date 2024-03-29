@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+
+<h1>REGISTRATION FORM</h1>
+<h2>Please fill all the fields.</h2>
+<hr>
+<body style="background-color:lightyellow">
+    <form name="myForm" onsubmit="return validateForm()">
+    <ul>
+	<div id="user"><b>User-ID:<input type="text" name="users" required><span class="formerror"></span></div>
+	<div id="pass">Password:<input type="password" name="fpass" required><span class="formerror"></span></div>
+	<div  id="name">Name:<input type="text" name="fname" required><span class="formerror"></span></div>
+    <div id="ads">Address:<br><textarea name="ads" placeholder="optional"rows="5" cols="50"></textarea></div>
+	<div id="country" >Country:
+		<select name="count" required style="width:200px;">
+        <option value="">Please select an option</option>
+        <option value="in">India</option>
+        <option value="ch">China</option>
+        <option value="pak">Pakistan</option>
+        <option value="jap">Japan</option>
+        <option value="Ind">Indonesia</option>
+        <option value="af">Afganistan</option>
+        </select>
+		<span class="formerror"></span>
+		</div>
+	<div id="zip">Zipcode:<input type="text" name="zips" required><span class="formerror"></span></div>
+	<div id="emails">Email:<input type="text" name="femail"required><span class="formerror"></span></div>
+	<div id="gender">Gender:<span class="formerror"></span><br><input type="radio" name="gen">Male<input type="radio" name="gen">Female</div>
+	<div id="about">About:<br><textarea name="ads" placeholder="optional"rows="5" cols="100"></textarea></div>
+	<input type="submit" value="Submit">
+    </ul>
+    </form>
+</body>
+<style>
+ h1{
+  margin-left: 50px;
+  color: navy;
+  }
+ h2{
+  margin-left: 50px;
+  color: navy;
+  margin-top: -20px;
+  }
+.formerror 
+{
+    color: red;
+}
+</style>
+<script>
+function clearErrors(){
+
+    errors = document.getElementsByClassName('formerror');
+    for(let item of errors)
+    {
+        item.innerHTML = "";
+    }
+
+
+}
+function seterror(id, error){
+
+    element = document.getElementById(id);
+    element.getElementsByClassName('formerror')[0].innerHTML = error;
+
+}
+
+function validateForm(){
+    var returnval = true;
+    clearErrors();
+    var name = document.forms['myForm']["users"].value;
+    if (name.length<5||name.length>12){
+        seterror("user", "Required and Must be of length 5 to 12");
+        returnval = false;
+    }
+	var password = document.forms['myForm']["fpass"].value;
+    if (password.length < 7||password.length>12)
+	{
+        seterror("pass", "required and must be of length 7 to 12");
+        returnval = false;
+    }
+  	var names=document.forms['myForm']["fname"].value;
+	var alp=/^[0-9]+$/;
+	if(names.match(alp))
+	{
+	   seterror("name","Names cannot have numbers");
+	   returnval= false;
+	}
+	var zipc=document.forms['myForm']["zips"].value;
+	if(isNaN(zipc))
+	{
+	   seterror("zip","Zipcode must be Numeric only");
+	   returnval= false;
+	}
+	var email = document.forms['myForm']["femail"].value;
+	var atposition=email.indexOf("@");
+	var dotposition=email.lastIndexOf(".");
+    if (atposition < 1||dotposition < atposition+2||dotposition >= email.length)
+	{
+        seterror("emails", "Invalid Email address");
+        returnval = false; 
+    }
+	var fgen=document.forms['myForm']["gen"].value;
+	if(fgen==='')
+	{
+	    seterror("gender", "Required");
+        returnval = false;
+    }		
+    
+
+
+    return returnval;
+}
+</script>
+</html>

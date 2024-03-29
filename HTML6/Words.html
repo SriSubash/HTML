@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+var i=0;
+function change() {
+  var words = ["blue", "brown", "green","orange","white","peach","black","violet","red"];
+  document.getElementById('p1').innerHTML=words[i];
+  i = (i + 1) % words.length;
+}
+setInterval(change, 5000);
+</script>
+</head>
+<body>
+<center>
+<h1> WELCOME TO IT ESSENTIALS LAB </h1>
+<h3> Exercise 6 </h3>
+<p> Displaying Random Words Every 5 Seconds </p>
+<input type="button" onclick="change();" value="Click Me"/><br><br>
+<span id="p1"></span>
+</center>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Change the Background Color Dynamically with JavaScript</title>
+<script>
+    // Function to change webpage background color
+    function changeBodyBg(color){
+        document.body.style.background = color;
+    }
+    
+    // Function to change heading background color
+    function changeHeadingBg(color){
+        document.getElementById("heading").style.background = color;
+    }
+</script>
+</head>
+<body>
+<center>
+    <h1 id="heading">Welcome to It Essentials Lab </h1>
+    <p> Background Color Changing Using Javascript </p>
+    <hr>
+    <div>
+        <label>Click the Colors to Change Background Color</label><br>
+        <button type="button" onclick="changeBodyBg('yellow');">Yellow</button>
+        <button type="button" onclick="changeBodyBg('lime');">Lime</button>
+        <button type="button" onclick="changeBodyBg('orange');">Orange</button>
+    </div>
+    <br>
+    <div>
+        <label>Click the Colrs to Change the Background Color of Heading</label><br>
+        <button type="button" onclick="changeHeadingBg('red');">Red</button>
+        <button type="button" onclick="changeHeadingBg('green');">Green</button>
+        <button type="button" onclick="changeHeadingBg('blue');">Blue</button>
+    </div>
+</center>
+</body>
+</html>

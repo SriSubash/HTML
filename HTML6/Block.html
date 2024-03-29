@@ -1,0 +1,51 @@
+<html>
+<head>
+<title>Demo of changing position of an Image in JavaScript</title>
+<script language='JavaScript' type='text/JavaScript'>
+<!--
+function move_img(str) {
+var step=50;
+switch(str){
+case "down":
+var x=document.getElementById('i1').offsetTop;
+x= x + step;
+document.getElementById('i1').style.top= x + "px";
+break;
+
+case "up":
+var x=document.getElementById('i1').offsetTop;
+x= x -step;
+document.getElementById('i1').style.top= x + "px";
+break;
+
+case "left":
+var y=document.getElementById('i1').offsetLeft;
+y= y - step;
+document.getElementById('i1').style.left= y + "px";
+break;
+
+case "right":
+var y=document.getElementById('i1').offsetLeft;
+y= y + step;
+document.getElementById('i1').style.left= y + "px";
+break;
+}
+}
+</script>
+</head>
+<body>
+<center>
+<h1> WELCOME TO IT ESSENTIALS LAB </h1>
+<h3> Exercise 6 </h3>
+<p> Moving Position of Blocks </p>
+<input type=button onClick=move_img('up') value='Up'><br><br>
+<input type=button onClick=move_img('left') value='Left'><br><br>
+<input type=button onClick=move_img('right') value='right'><br><br>
+<input type=button onClick=move_img('down') value='down'><br><br>
+<div id='i1' 
+  style="height:100px;width:100px;background-color:black;position:absolute; left: 46.5%; top: 50%;">
+<br><br><br><br>
+</div>
+</center>
+</body>
+</html>

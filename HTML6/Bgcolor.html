@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+var i=0;
+function change() {
+  var color = ["blue", "brown", "green","orange","white","peach","black","violet","red"];
+  document.body.style.backgroundColor = color[i];
+  i = (i + 1) % color.length;
+}
+setInterval(change, 2000);
+</script>
+</head>
+<body>
+<center>
+<h1> WELCOME TO IT ESSENTIALS LAB </h1>
+<h3> Exercise 6 </h3>
+<p> Changing Background Color every 2 Seconds </p>
+<input type="button" onclick="change();" value="Click Me"/>
+</center>
+</body>
+</html>

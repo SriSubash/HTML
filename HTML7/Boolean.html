@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function validate()
+{
+const value=document.getElementById('num').value; 
+if(value==true||value==false)
+    {
+    alert('Boolean Value');
+    }
+else{
+    alert('Not a Boolean Value');
+    }
+}
+</script>
+</head>
+<body bgcolor="lightgreen">
+<center>
+<h1>BOOLEAN VALUE CHECKING</h1>
+<form name="myform" onsubmit="return validate()" >  
+Enter a value:<input type="text" id="num"><br><br>  
+<input type="submit" value="submit">
+</center>  
+</form>
+</body>
+</html>
